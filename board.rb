@@ -50,11 +50,47 @@ class Board
     end
   end
 
+  def get_neighbors(row, col)
+    #return an array of all neighboring positions on a 2-D array
+    neighbors = []
+
+    (-1..1).each do |plus_row|
+      (-1..1).each do |plus_col|
+        next if plus_row == 0 and plus_col == 0
+        neighbors << [row + plus_row, col + plus_col]
+      end
+    end
+    #ensure edges return only neighbors within array
+    neighbors.select do |neighbor|
+      neighbor[0].between?(0, @size - 1) && neighbor[1].between?(0, @size - 1)
+    end
+
+  end
+
+  def calc_value(row, col)
+    value = 0
+    neighbors = get_neighbors(row, col)
+    neighbors.each do |neighbor|
+      value += 1 if self[neighbor[0], neighbor[1]].mine
+    end
+    value
+  end
+
+  def calc_values
+    (0...@size).each do |row|
+      (0...@size).each do |col|
+        self[row,col].value = calc_value(row, col)
+      end
+    end
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
   board = Board.new
   board.populate
   board.place_mines
+  board.calc_values
   board.render
+  puts board.calc_value(0,0)
 end
