@@ -17,6 +17,7 @@ class Board
   end
 
   def render
+    puts "\n"
     (0...@size).each do |row|
       line = []
       (0...@size).each do |col|
@@ -24,6 +25,7 @@ class Board
       end
       puts line.join(" ")
     end
+    puts "\n"
   end
 
   def mine_placement(num_mines)
@@ -37,6 +39,7 @@ class Board
   end
 
   def place_mines
+    #magic number - 10 is classic minesweeper num mines
     mine_placement(10).each do |row, col|
       self[row,col] = Tile.new(true)
     end
@@ -92,9 +95,10 @@ class Board
         return false unless tile.revealed || tile.mine
       end
     end
+    puts "Congratulations! You won!"
+    true
   end
 
-  #needs testing
   def lost?
     (0...@size).each do |row|
       (0...@size).each do |col|
@@ -102,15 +106,7 @@ class Board
         return true if tile.mine && tile.revealed
       end
     end
+    false
   end
 
-end
-
-if __FILE__ == $PROGRAM_NAME
-  board = Board.new
-  board.populate
-  board.place_mines
-  board.calc_values
-  board.render
-  puts board.calc_value(0,0)
 end

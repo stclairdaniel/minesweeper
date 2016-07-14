@@ -1,6 +1,6 @@
 class Tile
 
-  attr_accessor :mine, :revealed, :value
+  attr_accessor :mine, :revealed, :value, :flagged
 
   def initialize(mine = false)
     @mine = mine
@@ -15,7 +15,6 @@ class Tile
     # revealed and no mine and no value: _
     # revealed and no mine and value: value
     # revealed and mine: X
-    #following is temporary
     if @revealed
       if @mine
         "X"
