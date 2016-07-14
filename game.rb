@@ -38,7 +38,7 @@ class Game
   def click(row,col)
     tile = @board[row,col]
     tile.revealed = true unless tile.flagged
-    return if tile.mine# || tile.flagged
+    return if tile.mine
     if tile.value == 0
       @board.get_neighbors(row,col).each do |neighbor|
         unless @board[neighbor[0], neighbor[1]].revealed
@@ -54,12 +54,9 @@ class Game
     col = col.to_i
     click(row,col) if click_flag == "c"
     if click_flag == "f"
-      puts "ok"
       if @board[row,col].flagged == true
-        puts "got here"
         @board[row,col].flagged = false
       else
-        puts "got herereherh"
         @board[row,col].flagged = true
       end
     end
