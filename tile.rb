@@ -1,5 +1,9 @@
+require 'colorize'
+
 class Tile
 
+
+  #go back and check
   attr_accessor :mine, :revealed, :value, :flagged
 
   def initialize(mine = false)
@@ -17,17 +21,18 @@ class Tile
     # revealed and mine: X
     if @revealed
       if @mine
-        "X"
+        "X".colorize(:yellow)
       elsif @value
-        "#{value}"
+        "#{value}".colorize(:light_green)
       else
         "_"
       end
     elsif @flagged
-      "F"
+      "F".colorize(:red)
     else
       "*"
     end
+
   end
 
 

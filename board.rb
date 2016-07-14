@@ -1,4 +1,4 @@
-require_relative 'tile.rb'
+require_relative 'tile'
 
 class Board
   attr_reader :grid, :size
@@ -38,18 +38,18 @@ class Board
     possible.sample(num_mines)
   end
 
-  def place_mines
-    #magic number - 10 is classic minesweeper num mines
-    mine_placement(10).each do |row, col|
-      self[row,col] = Tile.new(true)
-    end
-  end
-
   def populate
     (0...@size).each do |row|
       (0...@size).each do |col|
         self[row,col] = Tile.new
       end
+    end
+  end
+
+  def place_mines
+    #magic number - 10 is classic minesweeper num mines
+    mine_placement(10).each do |row, col|
+      self[row,col].mine = true
     end
   end
 
@@ -65,7 +65,8 @@ class Board
     end
     #ensure edges return only neighbors within array
     neighbors.select do |neighbor|
-      neighbor[0].between?(0, @size - 1) && neighbor[1].between?(0, @size - 1)
+      neighbor[0].between?(0, @size - 1) &&
+        neighbor[1].between?(0, @size - 1)
     end
 
   end
@@ -87,7 +88,6 @@ class Board
     end
   end
 
-  #needs testing
   def won?
     (0...@size).each do |row|
       (0...@size).each do |col|

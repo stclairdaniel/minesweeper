@@ -1,9 +1,10 @@
-require_relative 'board.rb'
+require_relative 'board'
 
 class Game
 
   def initialize(board)
     @board = board
+
     @board.populate
     @board.place_mines
     @board.calc_values
@@ -19,8 +20,8 @@ class Game
     input = nil
     until valid_input?(input)
       puts "Input row col c/f"
-      puts "=>"
-       input = gets.chomp.split(" ")
+      p "=>"
+      input = gets.chomp.split(" ")
     end
     input
   end
@@ -36,8 +37,8 @@ class Game
 
   def click(row,col)
     tile = @board[row,col]
-    tile.revealed = true
-    return if tile.mine
+    tile.revealed = true unless tile.flagged
+    return if tile.mine# || tile.flagged
     if tile.value == 0
       @board.get_neighbors(row,col).each do |neighbor|
         unless @board[neighbor[0], neighbor[1]].revealed
@@ -52,7 +53,16 @@ class Game
     row = row.to_i
     col = col.to_i
     click(row,col) if click_flag == "c"
-    @board[row,col].flagged = true if click_flag == "f"
+    if click_flag == "f"
+      puts "ok"
+      if @board[row,col].flagged == true
+        puts "got here"
+        @board[row,col].flagged = false
+      else
+        puts "got herereherh"
+        @board[row,col].flagged = true
+      end
+    end
   end
 
   def play
