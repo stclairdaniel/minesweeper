@@ -1,7 +1,7 @@
 require_relative 'tile.rb'
 
 class Board
-  attr_reader :grid
+  attr_reader :grid, :size
 
   def initialize(size = 9)
     @size = size
@@ -80,6 +80,26 @@ class Board
     (0...@size).each do |row|
       (0...@size).each do |col|
         self[row,col].value = calc_value(row, col)
+      end
+    end
+  end
+
+  #needs testing
+  def won?
+    (0...@size).each do |row|
+      (0...@size).each do |col|
+        tile = self[row,col]
+        return false unless tile.revealed || tile.mine
+      end
+    end
+  end
+
+  #needs testing
+  def lost?
+    (0...@size).each do |row|
+      (0...@size).each do |col|
+        tile = self[row,col]
+        return true if tile.mine && tile.revealed
       end
     end
   end

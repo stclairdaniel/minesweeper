@@ -16,7 +16,19 @@ class Tile
     # revealed and no mine and value: value
     # revealed and mine: X
     #following is temporary
-    mine ? "x" : @value
+    if @revealed
+      if @mine
+        "X"
+      elsif @value
+        "#{value}"
+      else
+        "_"
+      end
+    elsif @flagged
+      "F"
+    else
+      "*"
+    end
   end
 
 
