@@ -1,10 +1,6 @@
 require_relative 'board'
 require 'yaml'
 
-#TODO
-#Factor save/load functionality out to seperate methods
-#Make load more robust - give user load -f filename option
-
 class Game
 
   def initialize(board)
@@ -125,8 +121,8 @@ class Game
     end
     game_file = File.open(filename, 'r') { |file| file.read}
     game = YAML::load(game_file)
-    game.play
     puts 'Game loaded'
+    game.play
   end
 
 end
