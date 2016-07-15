@@ -16,30 +16,37 @@ class Game
   end
 
   def welcome
-    puts 'Welcome to Minesweeper. I haven\'t built a GUI yet, so'
-    puts 'enter your row, col, and click or flag as c or f'
+    puts 'Welcome to Minesweeper. Type "help" for commands'
+  end
+
+  def help
+    puts 'Enter your row, col, and click or flag as c or f'
     puts 'Example: 3 3 c to click at row 3 column 3'
+    puts
+    puts 'Type save at any time to save your game'
+    puts 'Type load at any time to load a saved game'
+    puts
+    puts 'You can add an optional -f filename to either save or load'
   end
 
   def get_input
     input = nil
     until valid_input?(input)
-      puts 'Input row col c/f '
-      puts 'Type save to save your game'
-      puts 'Type load to load a saved game (must be named saved_game.txt)'
-      p '=>'
+      p 'Enter move =>'
       input = gets.chomp.split(' ')
     end
     input
   end
 
   def valid_input?(input)
-    return true if input == ['save'] || input == ['load']
-    return false if input.nil? || input.size != 3
+    return false if input.nil?
+    return true if %w[save load help].include?(input[0])
+    return false if input.size != 3
     row, col, click_flag = input
-    return false unless row.to_i.between?(0, @board.size - 1)
-    return false unless col.to_i.between?(0, @board.size - 1)
-    return false unless click_flag == 'c' || click_flag == 'f'
+    max = (@board.size - 1).to_s
+    return false unless ('0'..max).include?(row) &&
+      ('0'..max).include?(row) &&
+        click_flag == 'c' || click_flag == 'f'
     true
   end
 
@@ -56,15 +63,16 @@ class Game
     end
   end
 
-  def update(input)
-    if input == ['save']
-      save
-      return
+  def update_handler(input)
+    if %w[save load help].include?(input[0])
+        update_file(input)
+    else
+      update_board(input)
     end
-    if input == ['load']
-      load
-      return
-    end
+  end
+
+
+  def update_board(input)
     row, col, click_flag = input
     row = row.to_i
     col = col.to_i
@@ -78,26 +86,47 @@ class Game
     end
   end
 
+  def update_file(input)
+    case input[0]
+    when 'save'
+      save(input)
+    when 'load'
+      load(input)
+    when 'help'
+      help
+    end
+  end
+
   def play
     welcome
     @board.render
     until @board.won? || @board.lost?
-      update(get_input)
+      update_handler(get_input)
       @board.render
       puts 'Oh no, you lost!' if @board.lost?
     end
   end
 
-  def save
+  def save(input)
+    if input.include?('-f')
+      filename = input[-1]
+    else
+      filename = 'saved_game.txt'
+    end
+    File.open(filename, 'w') { |file| file.write(self.to_yaml)}
     puts 'Game saved'
-    File.open('saved_game.txt', 'w') { |file| file.write(self.to_yaml)}
   end
 
-  def load
-    puts 'Game loaded'
-    game_file = File.open('saved_game.txt', 'r') { |file| file.read}
+  def load(input)
+    if input.include?('-f')
+      filename = input[-1]
+    else
+      filename = 'saved_game.txt'
+    end
+    game_file = File.open(filename, 'r') { |file| file.read}
     game = YAML::load(game_file)
     game.play
+    puts 'Game loaded'
   end
 
 end

@@ -3,18 +3,23 @@ board: !ruby/object:Board
   size: 9
   grid:
   - - !ruby/object:Tile
-      mine: false
-      revealed: true
+      mine: true
+      revealed: false
       flagged: false
       value: 0
     - !ruby/object:Tile
       mine: false
-      revealed: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
       flagged: false
       value: 0
     - !ruby/object:Tile
       mine: false
-      revealed: true
+      revealed: false
       flagged: false
       value: 1
     - !ruby/object:Tile
@@ -24,226 +29,6 @@ board: !ruby/object:Board
       value: 0
     - !ruby/object:Tile
       mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: true
       revealed: false
       flagged: false
       value: 1
@@ -251,102 +36,22 @@ board: !ruby/object:Board
       mine: false
       revealed: false
       flagged: false
-      value: 3
+      value: 1
     - !ruby/object:Tile
       mine: false
-      revealed: true
+      revealed: false
       flagged: false
-      value: 3
+      value: 1
     - !ruby/object:Tile
       mine: false
-      revealed: true
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: false
-      revealed: true
+      revealed: false
       flagged: false
       value: 1
   - - !ruby/object:Tile
       mine: false
       revealed: false
       flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 0
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
       value: 2
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 3
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 3
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 4
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 0
-  - - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 1
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 3
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 4
     - !ruby/object:Tile
       mine: false
       revealed: false
@@ -359,7 +64,302 @@ board: !ruby/object:Board
       value: 2
     - !ruby/object:Tile
       mine: false
+      revealed: true
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
       revealed: false
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 1
+  - - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+  - - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+  - - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+  - - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+  - - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+  - - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
+      revealed: false
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 2
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
       flagged: false
       value: 1
   - - !ruby/object:Tile
@@ -376,7 +376,7 @@ board: !ruby/object:Board
       mine: false
       revealed: false
       flagged: false
-      value: 0
+      value: 1
     - !ruby/object:Tile
       mine: false
       revealed: false
@@ -384,26 +384,26 @@ board: !ruby/object:Board
       value: 1
     - !ruby/object:Tile
       mine: false
-      revealed: false
+      revealed: true
       flagged: false
-      value: 3
-    - !ruby/object:Tile
-      mine: true
-      revealed: false
-      flagged: false
-      value: 2
+      value: 1
     - !ruby/object:Tile
       mine: false
-      revealed: false
-      flagged: false
-      value: 2
-    - !ruby/object:Tile
-      mine: false
-      revealed: false
+      revealed: true
       flagged: false
       value: 0
     - !ruby/object:Tile
       mine: false
+      revealed: true
+      flagged: false
+      value: 0
+    - !ruby/object:Tile
+      mine: false
+      revealed: true
+      flagged: false
+      value: 1
+    - !ruby/object:Tile
+      mine: true
       revealed: false
       flagged: false
       value: 0

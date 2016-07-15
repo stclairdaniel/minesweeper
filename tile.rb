@@ -2,8 +2,7 @@ require 'colorize'
 
 class Tile
 
-  attr_reader :mine
-  attr_accessor :revealed, :value, :flagged
+  attr_accessor :mine, :revealed, :value, :flagged
 
   def initialize(mine = false)
     @mine = mine
