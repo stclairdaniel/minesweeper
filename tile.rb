@@ -2,9 +2,8 @@ require 'colorize'
 
 class Tile
 
-
-  #go back and check
-  attr_accessor :mine, :revealed, :value, :flagged
+  attr_reader :mine
+  attr_accessor :revealed, :value, :flagged
 
   def initialize(mine = false)
     @mine = mine
@@ -32,8 +31,6 @@ class Tile
     else
       "*"
     end
-
   end
-
 
 end

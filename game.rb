@@ -1,6 +1,10 @@
 require_relative 'board'
 require 'yaml'
 
+#TODO
+#Factor save/load functionality out to seperate methods
+#Make load more robust - give user load -f filename option
+
 class Game
 
   def initialize(board)
@@ -64,8 +68,8 @@ class Game
     row, col, click_flag = input
     row = row.to_i
     col = col.to_i
-    click(row,col) if click_flag == "c"
-    if click_flag == "f"
+    click(row,col) if click_flag == 'c'
+    if click_flag == 'f'
       if @board[row,col].flagged == true
         @board[row,col].flagged = false
       else
@@ -85,12 +89,12 @@ class Game
   end
 
   def save
-    puts "ran save"
+    puts 'Game saved'
     File.open('saved_game.txt', 'w') { |file| file.write(self.to_yaml)}
   end
 
   def load
-    puts "ran load"
+    puts 'Game loaded'
     game_file = File.open('saved_game.txt', 'r') { |file| file.read}
     game = YAML::load(game_file)
     game.play
