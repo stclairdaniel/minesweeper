@@ -28,7 +28,7 @@ class Game
   def get_input
     input = nil
     until valid_input?(input)
-      p 'Enter move =>'
+      puts 'Enter move: '
       input = gets.chomp.split(' ')
     end
     input
